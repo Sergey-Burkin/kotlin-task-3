@@ -48,7 +48,7 @@ fun main() = runBlocking {
                     val response = json.decodeFromString<DeribitResponse>(it.readText())
                     if (response.params != null) {
                         windowProcessor.addData(response.params.data)
-                        windowProcessor.displayData()
+                        displayData(windowProcessor)
                     }
                 }
             }
